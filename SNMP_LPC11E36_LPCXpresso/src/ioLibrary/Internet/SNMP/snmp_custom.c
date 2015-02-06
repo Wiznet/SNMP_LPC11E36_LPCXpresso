@@ -9,8 +9,11 @@
  *  	+ Etc.
  *
  *********************************************************************************************/
-#include "board.h"
 #include "snmp_custom.h"
+
+#ifdef _USE_WIZNET_W5500_EVB_
+	#include "board.h"
+#endif
 
 dataEntryType snmpData[] =
 {
@@ -50,6 +53,7 @@ dataEntryType snmpData[] =
 	SNMPDTYPE_INTEGER, 4, {""},
 	NULL, NULL},
 
+#ifdef _USE_WIZNET_W5500_EVB_
 	// Get the WIZnet W5500-EVB LED Status
 	{8, {0x2b, 6, 1, 4, 1, 6, 1, 0},
 	SNMPDTYPE_OCTET_STRING, 40, {""},
@@ -69,6 +73,7 @@ dataEntryType snmpData[] =
 	{8, {0x2b, 6, 1, 4, 1, 6, 1, 3},
 	SNMPDTYPE_INTEGER, 4, {""},
 	NULL, set_LEDStatus_B},
+#endif
 
 	// OID Test #1 (long-length OID example, 19865)
 	{0x0a, {0x2b, 0x06, 0x01, 0x04, 0x01, 0x81, 0x9b, 0x19, 0x01, 0x00},
@@ -95,7 +100,9 @@ void initTable()
 
 }
 
+
 // W5500-EVB: LED Control ///////////////////////////////////////////////////////////////////////////
+#ifdef _USE_WIZNET_W5500_EVB_
 void get_LEDStatus_all(void *ptr, uint8_t *len)
 {
 	uint8_t led_status[3] = {0, };
@@ -124,7 +131,7 @@ void set_LEDStatus_B(int32_t val)
 	if(val == 0) 	Board_LED_Set(LED_B, false);
 	else 			Board_LED_Set(LED_B, true);
 }
-
+#endif
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void initial_Trap(uint8_t * managerIP, uint8_t * agentIP)

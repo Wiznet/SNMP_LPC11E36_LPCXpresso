@@ -233,7 +233,7 @@ int32_t getOID(int32_t id, uint8_t *oid, uint8_t *len)
 		oid[j] = snmpData[id].oid[j];
 	}
 
-	return SUCCESS;
+	return SNMP_SUCCESS;
 }
 
 
@@ -324,7 +324,7 @@ int32_t getEntry(int32_t id, uint8_t *dataType, void *ptr, int32_t *len)
 		return INVALID_DATA_TYPE;
 	}
 
-	return SUCCESS;
+	return SNMP_SUCCESS;
 }
 
 
@@ -353,7 +353,7 @@ int32_t setEntry(int32_t id, void *val, int32_t vlen, uint8_t dataType, int32_t 
 			}
 			snmpData[id].dataLen = vlen;
 		}
-		retStatus = SUCCESS;
+		retStatus = SNMP_SUCCESS;
 		break;
 
 	case SNMPDTYPE_INTEGER :
@@ -370,7 +370,7 @@ int32_t setEntry(int32_t id, void *val, int32_t vlen, uint8_t dataType, int32_t 
 			}
 
 		}
-		retStatus = SUCCESS;
+		retStatus = SNMP_SUCCESS;
 		break;
 
 	default : 
@@ -788,7 +788,7 @@ int32_t makeTrapVariableBindings(dataEntryType *oid_data, void *ptr, uint32_t *l
 		return INVALID_DATA_TYPE;
 	}
 
-	return SUCCESS;
+	return SNMP_SUCCESS;
 }
 
 

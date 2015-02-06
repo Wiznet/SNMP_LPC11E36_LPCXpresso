@@ -15,7 +15,7 @@
 #define MAX_TRAPMSG_LEN				512
 
 // SNMP Error code
-#define SUCCESS						0
+#define SNMP_SUCCESS				0
 #define OID_NOT_FOUND				-1
 #define TABLE_FULL					-2
 #define ILLEGAL_LENGTH				-3

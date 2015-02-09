@@ -8,6 +8,13 @@ best fits for low-end Non-OS devices connecting to Ethernet for the Internet of 
 </p>
 
 ## How to Use
+This library supports only SNMP version 1. Supports PDU as follows. (will be updated)
+  - GetRequest-PDU
+  - GetNextRequest-PDU
+  - GetResponse-PDU
+  - SetRequest-PDU
+  - SNMPv1-Trap-PDU
+
 The SNMP agent library is roughly composed of the following functions.
 
 - snmpd_init(): Handle the SNMP agent daemon initialization

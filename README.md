@@ -41,7 +41,7 @@ The SNMP agent library is roughly composed of the following functions.
 - $ git push
 
 ## How to clone a submodule of ioLibrary
-- $ git clone git@github.com:Wiznet/HTTPServer_LPC11E36_LPCXpresso.git
+- $ git clone git@github.com:Wiznet/SNMP_LPC11E36_LPCXpresso.git
 - $ git submodule init
 - $ git submodule update
 

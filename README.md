@@ -8,7 +8,7 @@ best fits for low-end Non-OS devices connecting to Ethernet for the Internet of 
 </p>
 
 ## How to Use
-This library supports only SNMP version 1. Supports PDU as follows. (will be updated)
+This library supports only SNMP version 1. Supports PDU as follows.
   - GetRequest-PDU
   - GetNextRequest-PDU
   - GetResponse-PDU
